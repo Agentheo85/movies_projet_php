@@ -19,6 +19,7 @@ class movieController extends Controller
             ['id' => 8, 'title' => 'Josée, le tigre et les poissons','rated'=>5,'description'=>'bla bla bla c un bon film tqt pas',"Released"=>"12 dec 2016","banner"=>"https://m.media-amazon.com/images/I/81nvHysPyjL._AC_UF1000,1000_QL80_.jpg"],
             ['id' => 9, 'title' => 'Top Gun','rated'=>5,'description'=>'bla bla bla c un bon film tqt pas',"Released"=>"12 dec 1986","banner"=>"https://fr.web.img6.acsta.net/pictures/15/06/12/12/58/422779.jpg"],
             ['id' => 10, 'title' => 'Suzume','rated'=>5,'description'=>'bla bla bla c un bon film tqt pas',"Released"=>"12 dec 2022","banner"=>"https://cinedweller.com/wp-content/uploads/2023/04/suzume-affiche.jpg.webp"],
+            ['id' => 11 ,'title' => 'Tunnel to Summer','rated'=>5,'description'=>'bla bla bla c un bon film tqt pas',"Released"=>"12 dec 2022","banner"=>"https://m.media-amazon.com/images/S/pv-target-images/d050e35f978249565b0ede8e65b55dcabd714613c02e65fdb5bcb1a85516a6ad.jpg"],
 
 
 
