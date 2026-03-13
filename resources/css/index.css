@@ -1,0 +1,35 @@
+main {
+    padding: 1em;
+}
+h1 {
+    font-size: 2em;
+}
+section {
+    display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+
+}
+/*  class=" w-fit bg-gray-500 p-3 rounded-md" */
+.movie_card {
+    display: flex;
+    flex-direction: column;
+    height: 18vh;
+    justify-content: space-between;
+    color: white;
+background-color: oklch(51.1% 0.262 276.966);
+padding: 0.5em;
+border-radius: 10px;
+h3 {
+    font-size: 1.2em;
+}
+a {
+    background-color: oklch(59.894% 0.21777 262.794);
+    padding: 0.3em 0.5em;
+    border-radius: 8px;
+    text-align: center;
+}
+}
+
+/* class=" text-white bg-gray-400 p-1  rounded-lg" */
