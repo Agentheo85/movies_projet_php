@@ -24,7 +24,6 @@ class movieController extends Controller
 
     public function show($id)
     {
-        info($id);
 
         $movies = $this->getMovies();
         $movie = collect($movies)->firstWhere('id', $id);
