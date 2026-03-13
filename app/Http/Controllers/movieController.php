@@ -26,11 +26,11 @@ class movieController extends Controller
     {
         info($id);
 
-        $articles = $this->getMovies();
-        $article = collect($articles)->firstWhere('id', $id);
+        $movies = $this->getMovies();
+        $movie = collect($movies)->firstWhere('id', $id);
 
-        return view('articles.show', [
-            'article' => $article
+        return view('movies.show', [
+            'movie' => $movie
         ]);
     }
 }
