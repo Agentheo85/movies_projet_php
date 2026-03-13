@@ -9,7 +9,6 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-
         <!-- Styles / Scripts -->
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -24,8 +23,11 @@
         <h1>{{$movie['title']}}</h1>
         <h2>Sortie le {{$movie['Released']}}</h1>
         <h3>Avis: {{ $movie['rated'] }}</h3>
-        <p> {{$movie['description']}}</p>
-
+        <p>Description: {{$movie['description']}}</p>
+        @if (isset($movie['banner']))
+                <img height="400px" width="200px" src={{ $movie['banner'] }}>
+        @endif
+        <a class="bg-black text-white" href="/movies">Retour</a>
       </main>
     </body>
 </html>
