@@ -23,6 +23,7 @@ padding: 0.5em;
 border-radius: 10px;
 h3 {
     font-size: 1.2em;
+    font-weight:bold ;
 }
 a {
     background-color: oklch(59.894% 0.21777 262.794);
