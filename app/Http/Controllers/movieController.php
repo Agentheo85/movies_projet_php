@@ -39,7 +39,7 @@ class movieController extends Controller
     public function show($id)
     {
 
-        $movies = $this->getMovies();
+        $movies = $this->getMovies(); // un peu comme this.getMovies() , l'apelle de methode est different sur php avec -> a la place d'un .
         $movie = collect($movies)->firstWhere('id', $id);
 
         return view('movies.show', [
