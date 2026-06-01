@@ -36,8 +36,26 @@ class movieController extends Controller
         ]);
     }
 
-    public function show($id)
+     public function admin()
     {
+        return view('movies.create',);
+    }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+                  'title' => ['required','unique:movies', 'max:255'],
+                'Released' => ['required', 'max:255'],
+                'rated' => ['required','integer','min:0','max:5'],
+                'banner' => ['required','string']
+
+              ]);
+              Movie::create($validated);
+    
+    return redirect('/movies');
+    }
+    public function show($id)
+    { 
 
         $movies = $this->getMovies(); // un peu comme this.getMovies() , l'apelle de methode est different sur php avec -> a la place d'un .
         $movie = collect($movies)->firstWhere('id', $id);

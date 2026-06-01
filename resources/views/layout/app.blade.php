@@ -20,7 +20,10 @@
     </head>
     <body class="">
       <header><h1>Header</h1></header>
+      <main>
                     @yield('content')
+
+      </main>
 
       <footer><p>footer</p></footer>
     </body>
