@@ -54,15 +54,60 @@ class movieController extends Controller
     
     return redirect('/movies');
     }
+     public function delete(Request $request , $id)
+    {
+       $record = Movie::find($id); 
+
+        if ($record) {
+            $record->delete();
+        }
+            
+    
+    return redirect('/movies');
+    }
+
+     public function update(Request $request )
+    {
+
+        $id = $request->input('id'); // https://laravel.com/docs/13.x/requests#retrieving-input
+        echo $id;
+         $validated = $request->validate([
+                  'title' => ['required','unique:movies', 'max:255'],
+                'Released' => ['required', 'max:255'],
+                'rated' => ['required','integer','min:0','max:5'],
+                'banner' => ['required','string']
+
+              ]);
+       $record = Movie::find($id); 
+
+        if ($record) {
+            $record->update($validated);
+                return redirect('/movies');
+
+        }
+            
+    
+    }
+
+    public function edit(Request $request , $id)
+    {
+       $movie = Movie::find($id); 
+
+    
+        return view('movies.edit', [
+                    'movie' => $movie
+                ]);    }
     public function show($id)
     { 
 
         $movies = $this->getMovies(); // un peu comme this.getMovies() , l'apelle de methode est different sur php avec -> a la place d'un .
         $movie = collect($movies)->firstWhere('id', $id);
+        if(!$movie) {
+                            return redirect('/movies');
 
+        }
         return view('movies.show', [
             'movie' => $movie
         ]);
     }
 }
-

@@ -20,24 +20,28 @@
             </style>
         @endif
     </head>
- @section('content') <form action="{{ route('movies.create') }}" method="POST"> 
+ @section('content') <form action="{{ route('movies.update') }}" method="POST"> 
     @csrf 
+    @method('PATCH')
+
+         <input hidden type="text" id="id" name="id" value="{{$movie['id']}}" required size="10" >  <!--pour avoir lid  !-->
+
     <div>
      <label for="title">Titre</label>
-     <input type="text" id="title" name="title" required size="10" >
+     <input type="text" id="title" name="title" value="{{$movie['title']}}" required size="10" >
    </div>
    <div>
      <label for="rated">Note</label>
-     <input type="text" placeholder="4" id="rated" name="rated" required size="1" >
+     <input type="text" placeholder="4" id="rated" value="{{$movie['rated']}}" name="rated" required size="1" >
    </div>
    <div>
      <label for="Released">Date de sortie</label>
-     <input type="text" id="Released" placeholder="xx/xx/xxxx" name="Released" required size="10" >
+     <input type="text" id="Released" placeholder="xx/xx/xxxx" value="{{$movie['Released']}}" name="Released" required size="10" >
    </div>
    <div>
      <label for="banner">Image url</label>
-     <input type="text" id="banner" name="banner" required >
+     <input type="text" id="banner" name="banner" value="{{$movie['banner']}}" required >
    </div>
-   <input class="send " type="submit" value="Create Movie" />
+   <input class="send " type="submit" value="Update" />
  </form> @endsection
 </html>
