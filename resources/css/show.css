@@ -1,15 +1,77 @@
+
+
+
 main {
+    height: 1fr;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rated {
+    fill: rgb(255, 212, 59);
+}
+.unrated { 
+    fill:rgb(50, 50, 50)
+}
+
+.btn {
+    fill: rgb(70, 69, 69);
+    height: 15px;
+    width: auto;
+}
+
+.btns {
+        gap: 10px;
+        align-self: flex-end;
+        display: flex;
+        flex-direction: row;
+
+}
+.btn:hover {
+    align-self: flex-end;
+    fill: rgb(116, 115, 115);
+  
+}
+
+.interaction {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    .title{
-        font-size: 1.7em;
-    }
+}
+#info_movie {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+   color: rgb(153, 153, 153);
+   h2 {
+    color: white;
+    font-size: 1.5em;
+    text-transform: capitalize;
+   }
+   #rate_stars {
+    display: flex;
+    flex-direction: row;
+   }
+  #info {
+    display: flex;
+    text-align: left;
+    height: 100%;
+    flex-direction: column;
+  }
+  .back{
+    background: rgb(255, 72, 0);
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin-top: auto;
+    color: white;
+  }
    .stars {
     position: relative;
     svg {
-        height: 50px;
-        width: 25px;
+        height: 45px;
+        width: 20px;
     }
    }
 }

@@ -1,0 +1,43 @@
+
+main {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+form {
+    background: rgb(35, 34, 34);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+        width: 50vw;
+        
+        padding: 10px;
+
+}
+form div {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+form input {
+    border-radius: 8px;
+border: 1px solid rgb(59, 59, 59);
+    padding: 2px 5px;
+    background: #3a3737;
+}
+
+form input:hover {
+    outline: none;
+}
+
+form input:focus {
+    outline: none;
+}
+
+.send {
+    background-color: white;
+    color: black;
+}
