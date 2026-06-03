@@ -70,9 +70,8 @@ class movieController extends Controller
     {
 
         $id = $request->input('id'); // https://laravel.com/docs/13.x/requests#retrieving-input
-        echo $id;
          $validated = $request->validate([
-                  'title' => ['required','unique:movies', 'max:255'],
+                  'title' => ['required', 'max:255'],
                 'Released' => ['required', 'max:255'],
                 'rated' => ['required','integer','min:0','max:5'],
                 'banner' => ['required','string']
