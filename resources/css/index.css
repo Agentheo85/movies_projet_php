@@ -1,3 +1,4 @@
+
 main {
     padding: 1em;
 }
@@ -44,3 +45,6 @@ a:hover{
     background-color: red;
 }
 /* class=" text-white bg-gray-400 p-1  rounded-lg" */
+.red{
+    color:red
+}
