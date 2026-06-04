@@ -72,8 +72,6 @@
                      return window.confirm(`Es tu sur de suprimer le film ${title}`)
         };
 
-      
-
         console.log(deleteBtn)
 
       </script>
