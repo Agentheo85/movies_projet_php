@@ -39,6 +39,14 @@
      <input type="text" id="Released" placeholder="xx/xx/xxxx" value="{{$movie['Released']}}" name="Released" required size="10" >
    </div>
    <div>
+     <label for="Duration">Durée</label>
+     <input type="text" id="Duration" placeholder="150 min" value="{{$movie['Duration']}}" name="Duration" required size="10" >
+   </div>
+   <div>
+     <label for="Description">Plot du film</label>
+     <input type="text" id="Description" placeholder="bla bka bla"  value="{{$movie['Description']}}" name="Description" required size="10" >
+   </div>
+   <div>
      <label for="banner">Image url</label>
      <input type="text" id="banner" name="banner" value="{{$movie['banner']}}" required >
    </div>

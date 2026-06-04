@@ -41,6 +41,8 @@ class MovieSeeder extends Seeder
             $moisNombre =  $months[$mois];
              Movie::create(
             [  'title' => $movie['Title'],
+            'Description' => $movie['Plot'],
+                        'Duration' => $movie['Runtime'],
                 'Released' => $jour."/".$moisNombre."/".$annee, /* trop long a faire pour le projet */
                 'rated' => intval(explode("/",$movie["Ratings"][0]['Value'])[0])/2,
                 'banner' => $movie['Poster'] ?? null
