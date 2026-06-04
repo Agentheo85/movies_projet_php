@@ -24,7 +24,7 @@
     </head>
  @section('content')
    <main class="carousel-container">
-        <h1 >Listes des films: </h1>
+        <h1 class="red">Listes des films: </h1>
         <section class="carroussel">
             @foreach ($movies->chunk(10) as $slide)
                 <div class="slide">

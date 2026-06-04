@@ -19,7 +19,7 @@
         @endif
     </head>
     <body class="">
-      <header><h1>Header</h1></header>
+      <header><div id="header"><h1>CINÉ-REVIEW</h1></div></header>
       <main>
                     @yield('content')
 
