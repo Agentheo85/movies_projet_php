@@ -72,3 +72,16 @@ div.slide {
   overflow: auto;
   white-space: nowrap;
 }
+#header{
+    display: flex;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color:red;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    background-color: rgb(66, 33, 33);
+    margin: 5vh;
+    border-radius: 25px;
+    
+}
