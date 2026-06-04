@@ -21,7 +21,6 @@
         @endif
     </head>
    @section('content')
-   
       <main id="info_movie">
                         <img height="500px" width="300px"  src={{ $movie['banner'] ? $movie['banner']: "https://image.tmdb.org/t/p/w300/eXfuS4tZm51jfUz1RPNSwHYk8cX.jpg?class=poster" }} >
     <div id="info">
@@ -75,6 +74,7 @@
         console.log(deleteBtn)
 
       </script>
+
       </main>
       @endsection
      

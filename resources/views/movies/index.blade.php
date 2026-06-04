@@ -23,15 +23,22 @@
         @endif
     </head>
  @section('content')
-   <main >
+   <main class="carousel-container">
         <h1 >Listes des films: </h1>
-        <section >
-            @foreach ($movies as $movie)
-                     <div class="movie_card"> 
-                        <h3>{{ $movie['title'] }}</h3>
-                     <a  href="/movies/{{ $movie['id'] }}">Voir plus</a>  
-                    </div>
+        <section class="carroussel">
+            @foreach ($movies->chunk(10) as $slide)
+                <div class="slide">
+                    @foreach ($slide as $movie)
+                        <div class="movie_card"> 
+                            <img src={{ $movie['banner'] }}>
+                            <h3>{{ $movie['title'] }}</h3>
+                            <a  href="/movies/{{ $movie['id'] }}">Voir plus</a>  
+                        </div>
+                        
+                    @endforeach
+                </div>
             @endforeach
+            
         </section>
        
       </main>

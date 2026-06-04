@@ -5,7 +5,6 @@ h1 {
     font-size: 2em;
 }
 section {
-    display: grid;
       grid-template-columns: repeat(3, 1fr);
 
     gap: 10px;
@@ -15,22 +14,33 @@ section {
 .movie_card {
     display: flex;
     flex-direction: column;
-    height: 18vh;
+    text-wrap:wrap;
+    height: 40vh;
+    width: 18vh;
+    margin: 1vh;
     justify-content: space-between;
     color: white;
-background-color: oklch(51.1% 0.262 276.966);
-padding: 0.5em;
-border-radius: 10px;
+    background-color: oklch(26.598% 0.03046 301.515);
+    padding: 1em;
+    border-radius: 10px;
+    flex-shrink: 0;
 h3 {
     font-size: 1.2em;
     font-weight:bold ;
 }
 a {
-    background-color: oklch(59.894% 0.21777 262.794);
+    background-color: oklch(35.4% 0.07879 323.267);
     padding: 0.3em 0.5em;
     border-radius: 8px;
     text-align: center;
 }
 }
-
+.movie_card:hover {
+    background-color: rgb(74, 69, 78);
+    height: 45vh;
+    width: 23vh;
+}
+a:hover{
+    background-color: red;
+}
 /* class=" text-white bg-gray-400 p-1  rounded-lg" */
