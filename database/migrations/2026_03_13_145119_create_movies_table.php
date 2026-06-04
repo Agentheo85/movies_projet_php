@@ -17,6 +17,8 @@ return new class extends Migration
             $table->integer('rated');
             $table->string('title');
             $table->string('Released');
+            $table->string('Description')->nullable();
+            $table->string('Duration')->nullable();
             $table->string('banner')->nullable();
 
         });
