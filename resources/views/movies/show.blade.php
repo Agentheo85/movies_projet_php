@@ -37,7 +37,7 @@
     @endif
 @endfor
         </div>
-        <p>Description: {{$movie['description']}}</p>
+        <p>Plot: {{$movie['Description']}}</p>
     </div>
         
         <!-- @if (isset($movie['banner']))

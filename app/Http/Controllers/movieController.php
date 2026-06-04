@@ -47,7 +47,11 @@ class movieController extends Controller
                   'title' => ['required','unique:movies', 'max:255'],
                 'Released' => ['required', 'max:255'],
                 'rated' => ['required','integer','min:0','max:5'],
-                'banner' => ['required','string']
+                'banner' => ['required','string'],
+                'Description' => ['string'],
+                'Duration' => ['string'],
+
+
 
               ]);
               Movie::create($validated);
@@ -74,8 +78,9 @@ class movieController extends Controller
                   'title' => ['required', 'max:255'],
                 'Released' => ['required', 'max:255'],
                 'rated' => ['required','integer','min:0','max:5'],
-                'banner' => ['required','string']
-
+                'banner' => ['required','string'],
+                'Description' => ['string'],
+                'Duration' => ['string'],
               ]);
        $record = Movie::find($id); 
 
