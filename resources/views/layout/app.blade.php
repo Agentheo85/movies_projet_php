@@ -25,6 +25,6 @@
 
       </main>
 
-      <footer><p>footer</p></footer>
+      <footer><p>Made with ❤️</p><p>Djibril - Théo</p></footer>
     </body>
 </html>
