@@ -8,12 +8,6 @@ main {
     justify-content: center;
 }
 
-.rated {
-    fill: rgb(255, 212, 59);
-}
-.unrated { 
-    fill:rgb(50, 50, 50)
-}
 
 #delete {
     visibility: hidden;
@@ -64,6 +58,19 @@ main {
     display: flex;
     flex-direction: row;
    }
+
+   #info_description {
+    display: inline-flex;
+    gap: 10px;
+    h3 {
+        background-color: rgb(34, 31, 31);
+        border: 1px solid rgb(59, 59, 59);
+        border-radius: 5px;
+        padding: 5px 10px;
+
+    }
+   }
+
   #info {
     display: flex;
     text-align: left;

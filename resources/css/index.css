@@ -16,7 +16,7 @@ section {
     display: flex;
     flex-direction: column;
     text-wrap:wrap;
-    height: 65vh;
+    height: auto;
     width: auto;
     margin: 1vh;
     justify-content: space-between;
@@ -40,10 +40,23 @@ a {
     background-color: rgb(74, 69, 78);
 
 }
+
+#rate_stars {
+    display: flex;
+    flex-direction: row;
+   }
 a:hover{
     background-color: red;
 }
 /* class=" text-white bg-gray-400 p-1  rounded-lg" */
 .red{
     color:red
+}
+
+.stars {
+    position: relative;
+    svg {
+        height: 45px;
+        width: 20px;
+    }
 }

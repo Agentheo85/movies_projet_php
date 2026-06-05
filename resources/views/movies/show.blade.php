@@ -25,19 +25,12 @@
                         <img id="banner" height="500px" width="300px"   src={{ $movie['banner'] ? $movie['banner']: "https://image.tmdb.org/t/p/w300/eXfuS4tZm51jfUz1RPNSwHYk8cX.jpg?class=poster" }} >
     <div id="info">
         <h2 class="title">{{$movie['title']}}</h2>
-        <h3 id="date">Sortie le {{$movie['Released']}}</h3>
+        <div id="info_description">
+            <h3 id="date">Sortie : {{$movie['Released']}}</h3>
         <h3>Durée: {{ $movie['Duration'] }}</h3>
-        <h3>Avis: {{ $movie['rated'] }}/5</h3>
-        <div id="rate_stars">
-        @for ($i = 0; $i < 5; $i++)
-            @if ($i < $movie['rated'])
-                    <div class="stars rated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path  d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg></div>
-            @else
-                        <div class="stars unrated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path  d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg></div>
-
-            @endif
-        @endfor
+        <h3>Avis: {{ $movie['rated'] }}/5 </h3>
         </div>
+        
         <p>Plot: {{$movie['Description']}}</p>
     </div>
         
