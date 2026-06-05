@@ -16,8 +16,8 @@ section {
     display: flex;
     flex-direction: column;
     text-wrap:wrap;
-    height: 40vh;
-    width: 18vh;
+    height: 65vh;
+    width: auto;
     margin: 1vh;
     justify-content: space-between;
     color: white;
@@ -38,8 +38,7 @@ a {
 }
 .movie_card:hover {
     background-color: rgb(74, 69, 78);
-    height: 45vh;
-    width: 23vh;
+
 }
 a:hover{
     background-color: red;
