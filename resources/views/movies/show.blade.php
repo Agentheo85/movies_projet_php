@@ -22,20 +22,21 @@
     </head>
    @section('content')
       <main id="info_movie">
-                        <img height="500px" width="300px"  src={{ $movie['banner'] ? $movie['banner']: "https://image.tmdb.org/t/p/w300/eXfuS4tZm51jfUz1RPNSwHYk8cX.jpg?class=poster" }} >
+                        <img id="banner" height="500px" width="300px"   src={{ $movie['banner'] ? $movie['banner']: "https://image.tmdb.org/t/p/w300/eXfuS4tZm51jfUz1RPNSwHYk8cX.jpg?class=poster" }} >
     <div id="info">
         <h2 class="title">{{$movie['title']}}</h2>
         <h3 id="date">Sortie le {{$movie['Released']}}</h3>
+        <h3>Durée: {{ $movie['Duration'] }}</h3>
         <h3>Avis: {{ $movie['rated'] }}/5</h3>
         <div id="rate_stars">
-@for ($i = 0; $i < 5; $i++)
-    @if ($i < $movie['rated'])
-            <div class="stars rated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path  d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg></div>
-    @else
-                <div class="stars unrated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path  d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg></div>
+        @for ($i = 0; $i < 5; $i++)
+            @if ($i < $movie['rated'])
+                    <div class="stars rated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path  d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg></div>
+            @else
+                        <div class="stars unrated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path  d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg></div>
 
-    @endif
-@endfor
+            @endif
+        @endfor
         </div>
         <p>Plot: {{$movie['Description']}}</p>
     </div>
@@ -62,11 +63,18 @@
             const form = document.querySelector('form')
             const editBtn = document.querySelector(".edit")
             const url = new URL(window.location.href)
+            const banner = document.querySelector('#banner')
             editBtn.addEventListener('click',(e)=>{
                 window.location.assign(`${url.origin}${url.pathname}/edit`)
 
             })
         
+            banner.addEventListener("error",() => {
+                
+                banner.src = "https://cdn.discordapp.com/attachments/1428288179005554790/1512352318530519040/ChatGPT_Image_5_juin_2026_09_07_55.png?ex=6a23c75a&is=6a2275da&hm=9616c0d6a5eec97b2e1b5a1b666c029239e87587b55533364de086a4f6ac1d43&"
+
+            });
+
         form.onsubmit = () => {        
                      return window.confirm(`Es tu sur de suprimer le film ${title}`)
         };

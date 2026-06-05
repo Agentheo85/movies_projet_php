@@ -86,7 +86,7 @@ class movieController extends Controller
 
         if ($record) {
             $record->update($validated);
-                return redirect('/movies');
+                return redirect("/movies/{$id}");
 
         }
             

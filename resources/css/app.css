@@ -36,7 +36,8 @@ main {
 }
 
 .slide {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
     transition: transform 0.5s ease-in-out; /* For smooth sliding */
     align-content: center;
 }
@@ -51,21 +52,7 @@ main {
 } */
 
 /* Optional: Add navigation buttons */
-.carousel-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-around;
-}
 
-.carousel-nav button {
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
 
 footer {
     background-color: #1a1919;
@@ -83,12 +70,7 @@ border-top: 1px solid rgb(59, 59, 59);
     
 }
 
-div.slide {
-  background-color: #000000;
-  overflow: auto;
-  overflow-y: clip;
-  white-space: nowrap;
-}
+
 
 div.slide::-webkit-scrollbar {
   height: 8px; /* important pour overflow-x */
@@ -106,4 +88,18 @@ div.slide::-webkit-scrollbar-thumb {
 
 div.slide::-webkit-scrollbar-thumb:hover {
   background: #888;
+}
+
+#header{
+    display: flex;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color:red;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    background-color: rgb(66, 33, 33);
+    margin: 5vh;
+    border-radius: 25px;
+
 }

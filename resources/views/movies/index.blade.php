@@ -26,21 +26,19 @@
    <main class="carousel-container">
         <h1 class="red">Listes des films: </h1>
         <section class="carroussel">
-            @foreach ($movies->chunk(10) as $slide)
                 <div class="slide">
-                    @foreach ($slide as $movie)
+                    @foreach ($movies as $movie)
                         <div class="movie_card"> 
-                            <img src={{ $movie['banner'] }}>
+                            <img id="banner" onerror="this.src='https://cdn.discordapp.com/attachments/1428288179005554790/1512352318530519040/ChatGPT_Image_5_juin_2026_09_07_55.png?ex=6a23c75a&is=6a2275da&hm=9616c0d6a5eec97b2e1b5a1b666c029239e87587b55533364de086a4f6ac1d43&';" src={{ $movie['banner'] }} >
                             <h3>{{ $movie['title'] }}</h3>
                             <a  href="/movies/{{ $movie['id'] }}">Voir plus</a>  
                         </div>
                         
                     @endforeach
                 </div>
-            @endforeach
             
         </section>
-       
+      
       </main>
       @endsection
 </html>
